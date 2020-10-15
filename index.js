@@ -176,10 +176,10 @@ class Student extends Lambdasian {
     return `loving ${this.favSubjects}`;
   }
   PRAssignment(){
-    return `${this.name} has submitted a PR for ${this.subject}`;
+    return `${name} has submitted a PR for ${this.subject}`;
   }
   sprintChallenge(){
-    return `${this.name} has begun sprint challenge on ${this.subject}`;
+    return `${name} has begun sprint challenge on ${this.subject}`;
   }
 }
 
@@ -199,8 +199,8 @@ class Student extends Lambdasian {
 class ProjectManager extends Instructor {
   constructor(obj){
     super(obj);
-    this.gradClassName=gradClassName;
-    this.favInstructor=favInstructor;
+    this.gradClassName=this.gradClassName;
+    this.favInstructor=this.favInstructor;
   }
   standUp(channel){
     this.channel=channel;
