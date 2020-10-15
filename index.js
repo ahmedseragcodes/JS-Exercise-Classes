@@ -90,7 +90,6 @@ class Car {
     this.tank-=(distance/this.milesPerGallon);
     } else {
       this.odometer+=distance;
-      this.tank=0;
       return `I ran out of fuel at ${this.odometer} miles!`;
     }
   }
@@ -133,8 +132,13 @@ class Lambdasian {
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian { 
+  constructor(obj){
+    super(obj);
+    this.specialty=obj.specialty;
+    this.favLanguage=obj.favLanguage;
+    this.catchPhrase=obj.catchPhrase; 
+  }
 }
 
 /*
