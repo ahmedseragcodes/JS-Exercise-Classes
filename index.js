@@ -168,12 +168,12 @@ class Instructor extends Lambdasian {
 class Student extends Lambdasian {
   constructor(obj){
     super(obj);
-    this.previousBackground=previousBackground;
-    this.className=className;
-    this.favSubjects=[];
+    this.previousBackground=obj.previousBackground;
+    this.className=obj.className;
+    this.favSubjects=obj.favSubjects;
   }
   listSubjects(){
-    return `loving this.favSubjects`;
+    return `loving ${this.favSubjects}`;
   }
   PRAssignment(){
     return `${this.name} has submitted a PR for ${this.subject}`;
