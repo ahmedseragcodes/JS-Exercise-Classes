@@ -85,7 +85,7 @@ class Car {
     this.tank+=gallons;
   }
   drive(distance){
-    if (this.tank>0){
+    if (this.tank>=distance/this.milesPerGallon){
     this.odometer+=distance;
     this.tank-=(distance/this.milesPerGallon);
     } else {
@@ -165,8 +165,22 @@ class Instructor extends Lambdasian {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-
+class Student extends Lambdasian {
+  constructor(obj){
+    super(obj);
+    this.previousBackground=previousBackground;
+    this.className=className;
+    this.favSubjects=[];
+  }
+  listSubjects(){
+    return `loving this.favSubjects`;
+  }
+  PRAssignment(){
+    return `${this.name} has submitted a PR for ${this.subject}`;
+  }
+  sprintChallenge(){
+    return `${this.name} has begun sprint challenge on ${this.subject}`;
+  }
 }
 
 /*
@@ -182,8 +196,21 @@ class Student {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-
+class ProjectManager extends Instructor {
+  constructor(obj){
+    super(obj);
+    this.gradClassName=gradClassName;
+    this.favInstructor=favInstructor;
+  }
+  standUp(channel){
+    this.channel=channel;
+    return `${this.name} announces to ${this.channel}, @channel standy times!`;
+  }
+  debugsCode(student,subject){
+    this.student=student;
+    this.subject=subject;
+    return `${this.name} debugs ${this.student}'s code on ${this.subject}`;
+  }
 }
 
 /*
