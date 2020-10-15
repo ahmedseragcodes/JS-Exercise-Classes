@@ -146,7 +146,7 @@ class Instructor extends Lambdasian {
   grade(student, subject){
     this.student=student;
     this.subject=subject;
-    return `${this.student} receives a perfect score on ${this.subject}`;
+    return `${student.name} receives a perfect score on ${this.subject}`;
 }
 }
 
@@ -173,13 +173,15 @@ class Student extends Lambdasian {
     this.favSubjects=obj.favSubjects;
   }
   listSubjects(){
-    return `loving ${this.favSubjects}`;
+    return `Loving ${this.favSubjects}`;
   }
-  PRAssignment(){
-    return `${name} has submitted a PR for ${this.subject}`;
+  PRAssignment(subject){
+    this.subject=subject;
+    return `${this.name} has submitted a PR for ${this.subject}`;
   }
-  sprintChallenge(){
-    return `${name} has begun sprint challenge on ${this.subject}`;
+  sprintChallenge(subject){
+    this.subject=subject;
+    return `${this.name} has begun sprint challenge on ${this.subject}`;
   }
 }
 
@@ -199,8 +201,8 @@ class Student extends Lambdasian {
 class ProjectManager extends Instructor {
   constructor(obj){
     super(obj);
-    this.gradClassName=this.gradClassName;
-    this.favInstructor=this.favInstructor;
+    this.gradClassName=obj.gradClassName;
+    this.favInstructor=obj.favInstructor;
   }
   standUp(channel){
     this.channel=channel;
@@ -209,7 +211,7 @@ class ProjectManager extends Instructor {
   debugsCode(student,subject){
     this.student=student;
     this.subject=subject;
-    return `${this.name} debugs ${this.student}'s code on ${this.subject}`;
+    return `${student.name} debugs ${this.name}s code on ${this.subject}`;
   }
 }
 
